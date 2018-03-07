@@ -14,13 +14,13 @@
 		//DEFINE MAP OPTIONS
 		//=======================================================================================
   		var mapOptions = {
-    		zoom: 18,		
+    		zoom: 13,		
 			mapTypeId: google.maps.MapTypeId.ROADMAP,	
     		center: new google.maps.LatLng(51.392466, -0.503670),
     		panControl: true,
   			zoomControl: true,
   			mapTypeControl: true,
-  			//scaleControl: false,
+  			fullscreenControl: false,
   			streetViewControl: true,
   			overviewMapControl: true,
 			//rotateControl:true,
