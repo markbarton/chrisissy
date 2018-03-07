@@ -54,7 +54,7 @@
 		//ADD NEW MARKER WITH LABEL
 		//=======================================================================================
 		var marker1 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.046014, -77.030503),
+       		position: new google.maps.LatLng(51.392466, -0.503670),
        		draggable: false,
        		raiseOnDrag: false,
        		icon: ' ',
@@ -65,7 +65,7 @@
      		});
     
 		var marker2 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.046040, -77.029269),
+       		position: new google.maps.LatLng(51.373929, -0.533836),
        		draggable: false,
        		raiseOnDrag: false,
        		icon: ' ',
@@ -75,60 +75,7 @@
        		labelClass: "labels" // the CSS class for the label
      		});
 			
-		var marker3 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.045909, -77.031712),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#67a80e"><i class="de-icon-food"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});
-			
-		var marker4 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.046617, -77.030567	),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#c89d1b"><i class="de-icon-coffee"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});
-			
-		var marker5 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.045857, -77.032538),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#f0394d"><i class="de-icon-basket"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});	
-		
-		var marker6 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.046053, -77.028732),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#f6700e"><i class="de-icon-paper-plane"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});	
-			
-		var marker7 = new MarkerWithLabel({
-       		position: new google.maps.LatLng(-12.045363, -77.029939),
-       		draggable: false,
-       		raiseOnDrag: false,
-       		icon: ' ',
-       		map: map, 
-         	labelContent: '<div class="de-icon circle small-size" style="background-color:#0d9a48"><i class="de-icon-tree"></i></div>',
-       		labelAnchor: new google.maps.Point(0, 0),
-       		labelClass: "labels" // the CSS class for the label
-     		});			
+				
     	//marker.setMap( map );
 		
 		
@@ -160,7 +107,11 @@
 		//=======================================================================================
 		google.maps.event.addListener(marker1, 'click', function() {
   			infowindow.open(map,marker1);
-  		});
+		  });
+		  
+		  google.maps.event.addListener(marker2, 'click', function() {
+			infowindow.open(map,marker2);
+		});
 
 		//ON MARKER CLICK EVENTS
 		//=======================================================================================
