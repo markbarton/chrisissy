@@ -575,12 +575,12 @@
 				<!-- END of ROW-1 -->
 
 				<!-- FORM -->
-				<div class="row">
+				<div class="row" id="rsvp_form_container">
 					<div id="message" class="col-md-12 message">
 						<!-- Show Message -->
 					</div>
 
-					<form method="post" netlify action="thank-you" id="rsvpform" name="rsvpform" netlify-honeypot="bot-field">
+					<form method="post" netlify action="thankyou" id="rsvpform" name="rsvpform" netlify-honeypot="bot-field">
 						<p class="hidden">
 							<label>Don’t fill this out if you're human:
 								<input name="bot-field">
@@ -666,12 +666,23 @@
 							<div class="form-group">
 								<input type="submit" id="submitButton" name="submitButton" class="button medium reverse" value="SUBMIT">
 							</div>
-							<div class="alert alert-danger hide" id="errorwarn">
-								Please complete the required fields so we can make sure we have recorded your response ok.
-							</div>
+						
 						</div>
 					</form>
+					
+				</div>
 
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="alert alert-danger hide" id="errorwarn">
+								There has been an issue sending your RSVP information.<br/>
+								Please try again or contact	Isabelle (issyd1 at hotmail.com)
+								</div>
+								<div class="alert alert-success hide" id="successmessage">
+								Thank you - we have recieved your RSVP	
+								</div>
+							</div>
 				</div>
 			</div>
 
@@ -798,8 +809,12 @@
 			}
 			var $form = $(this);
 			$.post($form.attr("action"), $form.serialize()).then(function () {
-				alert("Thank you!");
-			});
+				$("#successmessage").show();
+				$("#rsvp_form_container").hide();
+				
+			}).catch(function(err){
+				$('#errorwarn').show();
+				$("#rsvp_form_container").hide();
 		});
 	</script>
 </body>
