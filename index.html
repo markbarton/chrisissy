@@ -38,14 +38,15 @@
 	<!-- <link href="css/skin/light-teal/light-teal-reverse-navbar.css" rel="stylesheet" media="screen"> -->
 	<!-- <link href="css/skin/pattern/pattern-1.css" rel="stylesheet" media="screen"> -->
 	<style>
-		#gifts p{
+		#gifts p {
 			font-family: 'Tangerine', cursive;
 			font-size: 48px;
 			line-height: 52px;
 			margin-bottom: bottom 0px !important;
-			color:black;
+			color: black;
 		}
-		#rsvp-section{
+
+		#rsvp-section {
 			padding: 0 !important;
 		}
 	</style>
@@ -487,7 +488,8 @@
 
 
 		<section id="dont-miss-it">
-			<div class="image-divider" style="padding-bottom:300px;padding-top:450px !important;background-image:url(images/gallery/gallery12.jpg);" data-stellar-background-ratio="0.3">
+			<div class="image-divider" style="padding-bottom:300px;padding-top:450px !important;background-image:url(images/gallery/gallery12.jpg);"
+			 data-stellar-background-ratio="0.3">
 
 				<div class="container">
 					<div class="row">
@@ -578,23 +580,71 @@
 						<!-- Show Message -->
 					</div>
 
-					<form method="post" netlify name="rsvpform" >
+					<form method="post" netlify name="rsvpform">
 						<div class="col-md-6">
 							<div id="fullname" class="form-group">
 								<label for="inputname">*NAME</label>
 								<input type="text" required class="form-control ajax-input" id="inputname" placeholder="" data-required="Name Required" data-output-label="Output Name">
 							</div>
+							<div id="fullname" class="form-group">
+								<label for="inputstatus">ATTENDING</label><br/>
+								<label class="radio-inline">
+										<input type="radio" name="status"  value="accepts" checked> Accepts with pleasure.
+									  </label>
+									  <label class="radio-inline">
+										<input type="radio" name="status"  value="declines"> Declines with regret.
+									  </label>
+							</div>
 							<div id="email" class="form-group">
 								<label for="inputemail">*EMAIL</label>
-								<input type="email" required class="form-control ajax-input" id="inputemail" placeholder="" data-required="Email Required" data-output-label="Output Email">
+								<input type="email" required class="form-control ajax-input" id="inputemail" placeholder="" data-required="Email Required"
+								 data-output-label="Output Email">
 							</div>
-							<div id="events" class="form-group">
-								<label for="inputevents">*I WILL ATTEND TO</label>
-								<select multiple id="inputevents" class="form-control ajax-input" data-required="Please Select Events" data-output-label="Output Events">
-									<option>Wedding Day</option>
-									<option>Ceremony Day</option>
-									<option>The Party</option>
-								</select>
+							<h4>MENU SELECTION (if attending ceremony)</h4>
+
+							<div class="form-group">
+								<h5 style="margin-top:15px">Starter</h5>
+
+								<div class="radio">
+									<label>
+										<input type="radio" name="starter" id="starter1" checked value="starter_normal"> Baked French Brie Parcel, with bacon, redcurrant & caramelised orange salad.
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="starter" id="inlineRadio2" value="starter_veggie"> Roast butternut soup with root vegetable crisps.
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<h5 style="margin-top:15px">Main Course</h5>
+
+								<div class="radio">
+									<label>
+										<input type="radio" name="main"  checked value="main_normal"> Slow braised sticky Hampshire beef with creamed parsnip mash, Root vegetable crisps and Olivette carrots.
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="main"  value="main_veggie"> Seasonal vegtable and rosemary pie in a mini skillet, olivette carrots, creamy mash and vegetarian gravy.
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<h5 style="margin-top:15px">Dessert</h5>
+
+								<div class="radio">
+									<label>
+										<input type="radio" name="dessert"  checked value="dessert_creme_brulee"> 
+										Vanilla creme brulee, Grasmere shortbread and raspberries.
+									</label>
+								</div>
+								<div class="radio">
+									<label>
+										<input type="radio" name="dessert"  value="dessert_fruit"> 
+										Fresh fruit platter with Charantaise melon, raspberries, blueberries, strawberries, kiwi fruit and fruit sorbet.
+									</label>
+								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -602,10 +652,15 @@
 								<label for="inputmessage">LEAVE YOUR MESSAGE</label>
 								<textarea id="inputmessage" class="form-control ajax-input" rows="14" data-output-label="Output Message"></textarea>
 							</div>
+							<div id="email" class="form-group">
+									<label for="inputemail">Song Choice - Please enter a song you would like to hear in the evening.</label>
+									<input type="text" class="form-control ajax-input" id="songchoice" placeholder="" 
+									 >
+								</div>
 						</div>
 						<div class="col-md-12 text-center">
 							<div class="form-group">
-									<div netlify-recaptcha></div>
+								<div netlify-recaptcha></div>
 							</div>
 							<div class="form-group">
 								<input type="submit" id="submitButton" name="submitButton" class="button medium reverse" value="SUBMIT">
