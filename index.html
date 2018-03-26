@@ -567,13 +567,6 @@
 								RSVP
 							</h2>
 
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam notn bibendum
-								dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut ultrices nibh. Etiam aliquam
-								mauris non hendrerit faucibus. Proin pulvinar congue ex, vitae
-							</p>
-
-
 						</div>
 					</div>
 				</div>
@@ -585,15 +578,15 @@
 						<!-- Show Message -->
 					</div>
 
-					<form method="post" action="rsvp.php" id="rsvpform">
+					<form method="post" netlify name="rsvpform" >
 						<div class="col-md-6">
 							<div id="fullname" class="form-group">
 								<label for="inputname">*NAME</label>
-								<input type="text" class="form-control ajax-input" id="inputname" placeholder="" data-required="Name Required" data-output-label="Output Name">
+								<input type="text" required class="form-control ajax-input" id="inputname" placeholder="" data-required="Name Required" data-output-label="Output Name">
 							</div>
 							<div id="email" class="form-group">
 								<label for="inputemail">*EMAIL</label>
-								<input type="email" class="form-control ajax-input" id="inputemail" placeholder="" data-required="Email Required" data-output-label="Output Email">
+								<input type="email" required class="form-control ajax-input" id="inputemail" placeholder="" data-required="Email Required" data-output-label="Output Email">
 							</div>
 							<div id="events" class="form-group">
 								<label for="inputevents">*I WILL ATTEND TO</label>
@@ -611,6 +604,9 @@
 							</div>
 						</div>
 						<div class="col-md-12 text-center">
+							<div class="form-group">
+									<div netlify-recaptcha></div>
+							</div>
 							<div class="form-group">
 								<input type="submit" id="submitButton" name="submitButton" class="button medium reverse" value="SUBMIT">
 							</div>
