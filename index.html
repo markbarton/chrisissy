@@ -589,7 +589,8 @@
 						<div class="col-md-6">
 							<div id="fullname" class="form-group">
 								<label for="inputname">*NAME</label>
-								<input type="text" required class="form-control ajax-input" id="inputname" placeholder="" data-required="Name Required" data-output-label="Output Name">
+								<input type="text" required class="form-control ajax-input" id="inputname" name="Name" placeholder="" data-required="Name Required"
+								 data-output-label="Output Name">
 							</div>
 							<div id="fullname" class="form-group">
 								<label for="inputstatus">ATTENDING</label>
@@ -602,8 +603,8 @@
 								</label>
 							</div>
 							<div id="email" class="form-group">
-								<label for="inputemail">*EMAIL</label>
-								<input type="email" required class="form-control ajax-input" id="inputemail" placeholder="" data-required="Email Required"
+								<label for="email">*EMAIL</label>
+								<input type="email" required class="form-control ajax-input" name="email" id="inputemail" placeholder="" data-required="Email Required"
 								 data-output-label="Output Email">
 							</div>
 							<h4>MENU SELECTION (if attending ceremony)</h4>
@@ -654,19 +655,19 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="inputmessage">LEAVE YOUR MESSAGE</label>
-								<textarea id="inputmessage" class="form-control ajax-input" rows="14" data-output-label="Output Message"></textarea>
+								<textarea id="inputmessage" name="message" class="form-control ajax-input" rows="14" data-output-label="Output Message"></textarea>
 							</div>
 							<div id="email" class="form-group">
-								<label for="inputemail">Song Choice - Please enter a song you would like to hear in the evening.</label>
-								<input type="text" class="form-control ajax-input" id="songchoice" placeholder="">
+								<label for="song_choice">Song Choice - Please enter a song you would like to hear in the evening.</label>
+								<input type="text" name="song_choice" class="form-control ajax-input" id="songchoice" placeholder="">
 							</div>
 						</div>
 						<div class="col-md-12 text-center">
 							<div class="form-group">
-								<div netlify-recaptcha></div>
-							</div>
-							<div class="form-group">
 								<input type="submit" id="submitButton" name="submitButton" class="button medium reverse" value="SUBMIT">
+							</div>
+							<div class="alert alert-danger hide" id="errorwarn">
+								Please complete the required fields so we can make sure we have recorded your response ok.
 							</div>
 						</div>
 					</form>
@@ -776,7 +777,25 @@
 	<script>
 		$("#rsvpform").submit(function (e) {
 			e.preventDefault();
+			var errors=0;
+			$('#errorwarn').hide();
 
+			if (!$("#inputname").val()) {
+				$("#inputname").parents('td').addClass('warning');
+				errors++;
+			} else if ($("#inputname").val()) {
+				$("#inputname").parents('td').removeClass('warning');
+			}
+			if (!$("#email").val()) {
+				$("#email").parents('td').addClass('warning');
+				errors++;
+			} else if ($("#email").val()) {
+				$("#email").parents('td').removeClass('warning');
+			}
+			if(errors>0){
+				$('#errorwarn').show();
+        		
+			}
 			var $form = $(this);
 			$.post($form.attr("action"), $form.serialize()).then(function () {
 				alert("Thank you!");
