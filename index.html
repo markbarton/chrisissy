@@ -580,7 +580,7 @@
 						<!-- Show Message -->
 					</div>
 
-					<form method="post" netlify action="thankyou" id="rsvpform" name="rsvpform" netlify-honeypot="bot-field">
+					<form method="post" netlify action="thankyou.html" id="rsvpform" name="rsvpform" netlify-honeypot="bot-field">
 						<p class="hidden">
 							<label>Don’t fill this out if you're human:
 								<input name="bot-field">
@@ -809,14 +809,14 @@
 			}
 			var $form = $(this);
 			$.post($form.attr("action"), $form.serialize()).done(function () {
-				$("#successmessage").show();
+				document.getElementById('successmessage').classList.replace('hide', 'show');
 				$("#rsvp_form_container").hide();
-
 			}).fail(function (err) {
-				$('#errorwarn').show();
+				document.getElementById('errorwarn').classList.replace('hide', 'show');
 				$("#rsvp_form_container").hide();
 			});
 		})
+
 	</script>
 </body>
 
