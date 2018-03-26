@@ -808,11 +808,11 @@
         		
 			}
 			var $form = $(this);
-			$.post($form.attr("action"), $form.serialize()).then(function () {
+			$.post($form.attr("action"), $form.serialize()).done(function () {
 				$("#successmessage").show();
 				$("#rsvp_form_container").hide();
 				
-			}).catch(function(err){
+			}).fail(function(err){
 				$('#errorwarn').show();
 				$("#rsvp_form_container").hide();
 		});
