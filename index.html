@@ -666,23 +666,23 @@
 							<div class="form-group">
 								<input type="submit" id="submitButton" name="submitButton" class="button medium reverse" value="SUBMIT">
 							</div>
-						
+
 						</div>
 					</form>
-					
+
 				</div>
 
 				<div class="row">
 					<div class="col-md-12">
 
 						<div class="alert alert-danger hide" id="errorwarn">
-								There has been an issue sending your RSVP information.<br/>
-								Please try again or contact	Isabelle (issyd1 at hotmail.com)
-								</div>
-								<div class="alert alert-success hide" id="successmessage">
-								Thank you - we have recieved your RSVP	
-								</div>
-							</div>
+							There has been an issue sending your RSVP information.
+							<br/> Please try again or contact Isabelle (issyd1 at hotmail.com)
+						</div>
+						<div class="alert alert-success hide" id="successmessage">
+							Thank you - we have recieved your RSVP
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -788,7 +788,7 @@
 	<script>
 		$("#rsvpform").submit(function (e) {
 			e.preventDefault();
-			var errors=0;
+			var errors = 0;
 			$('#errorwarn').hide();
 
 			if (!$("#inputname").val()) {
@@ -803,19 +803,20 @@
 			} else if ($("#email").val()) {
 				$("#email").parents('td').removeClass('warning');
 			}
-			if(errors>0){
+			if (errors > 0) {
 				$('#errorwarn').show();
-        		
+
 			}
 			var $form = $(this);
 			$.post($form.attr("action"), $form.serialize()).done(function () {
 				$("#successmessage").show();
 				$("#rsvp_form_container").hide();
-				
-			}).fail(function(err){
+
+			}).fail(function (err) {
 				$('#errorwarn').show();
 				$("#rsvp_form_container").hide();
-		});
+			});
+		})
 	</script>
 </body>
 
