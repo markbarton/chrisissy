@@ -580,20 +580,26 @@
 						<!-- Show Message -->
 					</div>
 
-					<form method="post" netlify name="rsvpform">
+					<form method="post" netlify action="thank-you" id="rsvpform" name="rsvpform" netlify-honeypot="bot-field">
+						<p class="hidden">
+							<label>Don’t fill this out if you're human:
+								<input name="bot-field">
+							</label>
+						</p>
 						<div class="col-md-6">
 							<div id="fullname" class="form-group">
 								<label for="inputname">*NAME</label>
 								<input type="text" required class="form-control ajax-input" id="inputname" placeholder="" data-required="Name Required" data-output-label="Output Name">
 							</div>
 							<div id="fullname" class="form-group">
-								<label for="inputstatus">ATTENDING</label><br/>
+								<label for="inputstatus">ATTENDING</label>
+								<br/>
 								<label class="radio-inline">
-										<input type="radio" name="status"  value="accepts" checked> Accepts with pleasure.
-									  </label>
-									  <label class="radio-inline">
-										<input type="radio" name="status"  value="declines"> Declines with regret.
-									  </label>
+									<input type="radio" name="status" value="accepts" checked> Accepts with pleasure.
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="status" value="declines"> Declines with regret.
+								</label>
 							</div>
 							<div id="email" class="form-group">
 								<label for="inputemail">*EMAIL</label>
@@ -621,12 +627,12 @@
 
 								<div class="radio">
 									<label>
-										<input type="radio" name="main"  checked value="main_normal"> Slow braised sticky Hampshire beef with creamed parsnip mash, Root vegetable crisps and Olivette carrots.
+										<input type="radio" name="main" checked value="main_normal"> Slow braised sticky Hampshire beef with creamed parsnip mash, Root vegetable crisps and Olivette carrots.
 									</label>
 								</div>
 								<div class="radio">
 									<label>
-										<input type="radio" name="main"  value="main_veggie"> Seasonal vegtable and rosemary pie in a mini skillet, olivette carrots, creamy mash and vegetarian gravy.
+										<input type="radio" name="main" value="main_veggie"> Seasonal vegtable and rosemary pie in a mini skillet, olivette carrots, creamy mash and vegetarian gravy.
 									</label>
 								</div>
 							</div>
@@ -635,14 +641,12 @@
 
 								<div class="radio">
 									<label>
-										<input type="radio" name="dessert"  checked value="dessert_creme_brulee"> 
-										Vanilla creme brulee, Grasmere shortbread and raspberries.
+										<input type="radio" name="dessert" checked value="dessert_creme_brulee"> Vanilla creme brulee, Grasmere shortbread and raspberries.
 									</label>
 								</div>
 								<div class="radio">
 									<label>
-										<input type="radio" name="dessert"  value="dessert_fruit"> 
-										Fresh fruit platter with Charantaise melon, raspberries, blueberries, strawberries, kiwi fruit and fruit sorbet.
+										<input type="radio" name="dessert" value="dessert_fruit"> Fresh fruit platter with Charantaise melon, raspberries, blueberries, strawberries, kiwi fruit and fruit sorbet.
 									</label>
 								</div>
 							</div>
@@ -653,10 +657,9 @@
 								<textarea id="inputmessage" class="form-control ajax-input" rows="14" data-output-label="Output Message"></textarea>
 							</div>
 							<div id="email" class="form-group">
-									<label for="inputemail">Song Choice - Please enter a song you would like to hear in the evening.</label>
-									<input type="text" class="form-control ajax-input" id="songchoice" placeholder="" 
-									 >
-								</div>
+								<label for="inputemail">Song Choice - Please enter a song you would like to hear in the evening.</label>
+								<input type="text" class="form-control ajax-input" id="songchoice" placeholder="">
+							</div>
 						</div>
 						<div class="col-md-12 text-center">
 							<div class="form-group">
@@ -770,6 +773,16 @@
 	<!-- Custom Additional Script -->
 	<script type="text/javascript" src="js/main-slider-fade.js"></script>
 
+	<script>
+		$("#rsvpform").submit(function (e) {
+			e.preventDefault();
+
+			var $form = $(this);
+			$.post($form.attr("action"), $form.serialize()).then(function () {
+				alert("Thank you!");
+			});
+		});
+	</script>
 </body>
 
 </html>
