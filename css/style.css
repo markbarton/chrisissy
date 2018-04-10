@@ -2303,7 +2303,7 @@ form .has-error .btn-primary{
 
 #counting-down{
 	text-align:center; 
-	color:#222; 
+	color:#FFF; 
 	font-family: 'Pacifico';
 	-ms-transform: rotate(-10deg); 
 	-webkit-transform: rotate(-10deg); 
@@ -2343,6 +2343,7 @@ form .has-error .btn-primary{
 	letter-spacing:2px;
 }
 .simple-countdown .countdown-period {
+	color: #333 !important;
     display:inline-block;
 	font-size:18px;
 }
