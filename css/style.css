@@ -2303,7 +2303,7 @@ form .has-error .btn-primary{
 
 #counting-down{
 	text-align:center; 
-	color:#FFF; 
+	color:#222; 
 	font-family: 'Pacifico';
 	-ms-transform: rotate(-10deg); 
 	-webkit-transform: rotate(-10deg); 
