@@ -2313,7 +2313,7 @@ form .has-error .btn-primary{
 	margin-bottom:25px;
 }
 .countdown-period {
-	color: #333 !important;
+	color: #fff !important;
     display:inline-block;
 	font-size:18px;
 }
