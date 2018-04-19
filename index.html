@@ -804,10 +804,11 @@
 			}
 			var $form = $(this);
 			$.post($form.attr("action"), $form.serialize()).done(function () {
-				document.getElementById('successmessage').classList.replace('hide', 'show');
+				$('#successmessage').show();
 				$("#rsvp_form_container").hide();
 			}).fail(function (err) {
-				document.getElementById('errorwarn').classList.replace('hide', 'show');
+				$('#errorwarn').show();
+				// document.getElementById('errorwarn').classList.replace('hide', 'show');
 				$("#rsvp_form_container").hide();
 			});
 		})
