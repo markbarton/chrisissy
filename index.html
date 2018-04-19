@@ -801,15 +801,12 @@
 			} else if ($("#email").val()) {
 				$("#email").parents('td').removeClass('warning');
 			}
-			if (errors > 0) {
-				$('#errorwarn').show();
-
-			}
 			var $form = $(this);
 			$.post($form.attr("action"), $form.serialize()).done(function () {
 				$('#successmessage').show();
 				$("#rsvp_form_container").hide();
 			}).fail(function (err) {
+				console.log(err;)
 				$('#errorwarn').show();
 				// document.getElementById('errorwarn').classList.replace('hide', 'show');
 				$("#rsvp_form_container").hide();
