@@ -672,10 +672,6 @@
 				<div class="row">
 					<div class="col-md-12">
 
-						<div class="alert alert-danger" id="errorwarn" style="margin: 30px;padding: 30px;display:none">
-							There has been an issue sending your RSVP information.
-							<br/> Please try again or contact Isabelle (issyd1 at hotmail.com)
-						</div>
 						<div class="alert alert-success" id="successmessage" style="margin: 30px;padding: 30px;display:none">
 							<h2>Thank you - we have received your RSVP</h2>
 						</div>
@@ -805,12 +801,7 @@
 			$.post($form.attr("action"), $form.serialize()).done(function () {
 				$('#successmessage').show();
 				$("#rsvp_form_container").hide();
-			}).fail(function (err) {
-				console.log(err;)
-				$('#errorwarn').show();
-				// document.getElementById('errorwarn').classList.replace('hide', 'show');
-				$("#rsvp_form_container").hide();
-			});
+			})
 		})
 
 	</script>
