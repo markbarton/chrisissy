@@ -604,6 +604,17 @@
 								<input type="email" required class="form-control ajax-input" name="email" id="inputemail" placeholder="" data-required="Email Required"
 								 data-output-label="Output Email">
 							</div>
+							<div id<label for="inputstatus">DAY GUEST OR EVENING GUEST?</label>
+								<br/>
+								<label class="radio-inline">
+									<input type="radio" name="guest_type" value="day_guest" onchange="handleGuestType(this);"> Day Guest
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="guest_type" value="evening_guest" checked onchange="handleGuestType(this);"> Evening Guest
+								</label>
+							</div>
+							
+							<div id="food" style="display:none">
 							<h4>MENU SELECTION (if attending ceremony)</h4>
 
 							<div class="form-group">
@@ -648,6 +659,7 @@
 									</label>
 								</div>
 							</div>
+						</div>
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
@@ -777,6 +789,17 @@
 	<script type="text/javascript" src="js/main-slider-fade.js"></script>
 
 	<script>
+		function handleGuestType(evt){
+			var check = $('input[name=guest_type]:checked').val();
+			if(check==='day_guest'){
+				$('#food').show();
+
+			}else{
+				$('#food').hide();
+
+			}
+
+		}
 		function test(){
 			$('#successmessage').show();
 		}
