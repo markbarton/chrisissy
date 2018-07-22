@@ -1,0 +1,22 @@
+html {
+    box-sizing: border-box;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+  
+  }
+  
+  /* Main Grid Container */
+  #container {
+    height: 100vh;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
+
+  img{
+      border:1px solid black;
+      width:400px;
+      height:400px;
+  }
